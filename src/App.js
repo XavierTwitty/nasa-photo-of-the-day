@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import PictureCard from "./Components/APOD_Card";
 import "./App.css";
 
 function App() {
@@ -25,6 +26,15 @@ function App() {
         </span>
         !
       </p>
+      <div>
+        <PictureCard
+          title={dataOfTheDay.title}
+          copyright={dataOfTheDay.copyright}
+          date={dataOfTheDay.data}
+          hdurl={dataOfTheDay.hdurl}
+          explanation={dataOfTheDay.explanation}
+        />
+      </div>
     </div>
   );
 }
