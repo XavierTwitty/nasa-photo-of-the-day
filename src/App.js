@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PictureCard from "./Components/APOD_Card";
 import "./App.css";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  font-size: 1.5rem;
+  text-align: center:
+  color: red;
+`;
 
 function App() {
   const [dataOfTheDay, SetdataOfTheDay] = useState({});
@@ -9,7 +16,7 @@ function App() {
     axios
       .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
       .then((response) => SetdataOfTheDay(response.data));
-    console.log("in our effect");
+    // console.log("in our effect");
   }, []);
 
   useEffect(() => {
@@ -18,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>
+      <p style={style}>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun{" "}
         <span role="img" aria-label="go!">
